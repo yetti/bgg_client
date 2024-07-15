@@ -1,7 +1,7 @@
 require:
   - standard
-  - rubocop-rake
   - rubocop-rspec
+  - rubocop-performance
 
 inherit_gem:
   standard: config/base.yml
@@ -9,8 +9,10 @@ inherit_gem:
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.0
+  SuggestExtensions: false
   Exclude:
-    - "bin/*"
+    - "bin/**/*"
+    - "vendor/**/*"
 
 RSpec:
   Enabled: true
