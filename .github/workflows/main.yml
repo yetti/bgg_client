@@ -4,9 +4,15 @@ on:
   push:
     branches:
       - main
-
+      - hotfix/*
   pull_request:
-
+    branches:
+      - main
+      - hotfix/*
+  workflow_dispatch:
+concurrency:
+  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,14 +20,20 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - '3.3.4'
-
+          - "3.3.4"
+    env:
+      CI: true
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-        bundler-cache: true
-    - name: Run the default task
-      run: bundle exec rake
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - name: Run the default task
+        run: bundle exec rake
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true

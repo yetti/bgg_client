@@ -12,3 +12,6 @@
 
 # ignore VSCode config
 .vscode
+
+# ignore TAGS
+TAGS

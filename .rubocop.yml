@@ -1,13 +1,18 @@
 require:
-  - rubocop-rake
+  - standard
   - rubocop-rspec
+  - rubocop-performance
+
+inherit_gem:
+  standard: config/base.yml
 
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.0
+  SuggestExtensions: false
+  Exclude:
+    - "bin/**/*"
+    - "vendor/**/*"
 
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-
-Style/StringLiteralsInInterpolation:
-  EnforcedStyle: double_quotes
+RSpec:
+  Enabled: true
