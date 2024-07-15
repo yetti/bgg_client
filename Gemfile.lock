@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bgg_client (0.1.0)
+    bgg_client (0.2.0)
       anyway_config (~> 2.6)
       faraday (~> 2.10)
       httpx (~> 1.3)
