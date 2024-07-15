@@ -1,5 +1,17 @@
 ## [Unreleased]
 
+## [0.2.0](https://github.com/yetti/bgg_client/compare/bgg_client/0.1.0...bgg_client/0.2.0) (2024-07-15)
+
+
+### Features
+
+* add HTTP connection using Faraday ([8c60b1b](https://github.com/yetti/bgg_client/commit/8c60b1bc809117f00211ec1111da0c7fd70fff58))
+
+
+### Continuous Integration
+
+* add Codecov configuration ([74dddfd](https://github.com/yetti/bgg_client/commit/74dddfd613e0062df237824ee4df80818f88f177))
+
 ## 0.1.0 (2024-07-15)
 
 
