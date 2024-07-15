@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bgg_client (0.1.0)
+    bgg_client (0.0.0)
       anyway_config (~> 2.6)
       faraday (~> 2.10)
       httpx (~> 1.3)
@@ -33,9 +33,12 @@ GEM
     parser (3.3.4.0)
       ast (~> 2.4.1)
       racc
+    prism (0.30.0)
     racc (1.8.0)
     rainbow (3.1.1)
     rake (13.2.1)
+    rbs (3.5.2)
+      logger
     regexp_parser (2.9.2)
     rexml (3.3.1)
       strscan
@@ -52,13 +55,13 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.1)
-    rubocop (1.65.0)
+    rubocop (1.64.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 2.4, < 3.0)
+      regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
       rubocop-ast (>= 1.31.1, < 2.0)
       ruby-progressbar (~> 1.7)
@@ -70,14 +73,20 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rspec (3.0.3)
       rubocop (~> 1.61)
+    ruby-lsp (0.17.7)
+      language_server-protocol (~> 3.17.0)
+      prism (>= 0.29.0, < 0.31)
+      rbs (>= 3, < 4)
+      sorbet-runtime (>= 0.5.10782)
     ruby-next-core (1.0.3)
     ruby-progressbar (1.13.0)
-    standard (1.35.0.1)
+    sorbet-runtime (0.5.11481)
+    standard (1.39.1)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
-      rubocop (~> 1.62)
+      rubocop (~> 1.64.0)
       standard-custom (~> 1.0.0)
-      standard-performance (~> 1.3)
+      standard-performance (~> 1.4)
     standard-custom (1.0.2)
       lint_roller (~> 1.0)
       rubocop (~> 1.50)
@@ -99,7 +108,8 @@ DEPENDENCIES
   rubocop (~> 1.21)
   rubocop-performance (~> 1.21)
   rubocop-rspec (~> 3.0)
-  standard (~> 1.35)
+  ruby-lsp (~> 0.17.7)
+  standard (>= 1.35.1)
 
 BUNDLED WITH
    2.5.15
